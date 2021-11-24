@@ -1,29 +1,9 @@
-# Name of workflow
-name: Node CI
-
-# Trigger the workflow on push or pull request
-on:
-  - push
-  - pull_request
+name: lint test
+on: push
 
 jobs:
-  build:
-
-    # The type of machine to run the job on
+  my-job:
     runs-on: ubuntu-latest
-        
     steps:
-        # Check-out repository under GitHub workspace
-        # https://github.com/actions/checkout
-      - uses: actions/checkout@v2
-      - name: npm install
-        # Install project
-        run: |
-          make install
-        # Add environment variables
-        env:
-          CI: true
-      - name: Run linter
-        # Run Linter
-        run: |
-          make lint
+      - name: my-step
+        run: make lint
