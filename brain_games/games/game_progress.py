@@ -13,5 +13,5 @@ def ask_question_get_answer():
     collection = list(range(start_collect, start_collect + step * 10, step))
     correct_answer = str(collection[step])
     collection[step] = '..'
-    question = collection
+    question = (' '.join(map(str, collection)))
     return question, correct_answer
