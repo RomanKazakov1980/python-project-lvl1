@@ -2,12 +2,13 @@ import random
 
 
 GAME_RULE = 'What is the result of the expression?'
-RANGE = [0, 100]
+MIN_VALUE = 0
+MAX_VALUE = 100
 
 
-def ask_question_get_answer():
-    number_one = random.randint(RANGE[0], RANGE[1])
-    number_two = random.randint(RANGE[0], RANGE[1])
+def generate_roud():
+    number_one = random.randint(MIN_VALUE, MAX_VALUE)
+    number_two = random.randint(MIN_VALUE, MAX_VALUE)
     summa = f'{number_one} + {number_two}'
     difference = f'{number_one} - {number_two}'
     composition = f'{number_one} * {number_two}'
