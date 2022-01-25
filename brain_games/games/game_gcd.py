@@ -7,7 +7,10 @@ RANGE = [0, 100]
 
 
 def is_gcd(num_one, num_two):
-    return math.gcd(num_one, num_two)
+    if num_two == 0:
+        return num_one
+    else:
+        return is_gcd(num_two, num_one % num_two)
 
 
 def ask_question_get_answer():
