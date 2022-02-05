@@ -6,17 +6,21 @@ MIN_VALUE = 0
 MAX_VALUE = 100
 
 
-def generate_roud():
+def count_expression(question):
+    elements = question.split()
+    number_one, expression, number_two = elements
+    if expression == '+':
+        return int(number_one) + int(number_two)
+    elif expression == '-':
+        return int(number_one) - int(number_two)
+    else:
+        return int(number_one) * int(number_two)
+
+
+def generate_rounds():
     number_one = random.randint(MIN_VALUE, MAX_VALUE)
     number_two = random.randint(MIN_VALUE, MAX_VALUE)
-    summa = f'{number_one} + {number_two}'
-    difference = f'{number_one} - {number_two}'
-    composition = f'{number_one} * {number_two}'
-    operation_list = {
-        summa: number_one + number_two,
-        difference: number_one - number_two,
-        composition: number_one * number_two,
-    }
-    question = random.choice(list(operation_list.keys()))
-    correct_answer = str(operation_list[question])
+    expression = random.choice(['+', '-', '*'])
+    question = f'{number_one} {expression} {number_two}'
+    correct_answer = str(count_expression(question))
     return question, correct_answer

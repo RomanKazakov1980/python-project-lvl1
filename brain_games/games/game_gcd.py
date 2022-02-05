@@ -1,5 +1,4 @@
 import random
-import math
 
 
 GAME_RULE = 'Find the greatest common division of given numbers'
