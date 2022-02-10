@@ -1,11 +1,12 @@
 import prompt
-from brain_games.cli import welcome_user
 
 ROUNDS = 3
 
 
 def run_game(ask_question_get_answer, game_rule):
-    user_name = welcome_user()
+    print('Welcome to the Brain Games!')
+    user_name = prompt.string('May I have your name? ')
+    print('Hello, {}!'.format(user_name))
     print(game_rule)
     for i in range(ROUNDS):
         question, correct_answer = ask_question_get_answer()

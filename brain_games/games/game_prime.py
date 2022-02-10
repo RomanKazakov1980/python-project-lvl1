@@ -13,7 +13,7 @@ def is_prime(number):
     return True
 
 
-def ask_question_get_answer():
+def generate_round():
     question = random.randint(MIN_VALUE, MAX_VALUE)
     correct_answer = 'yes' if is_prime(question) else 'no'
     return question, correct_answer
